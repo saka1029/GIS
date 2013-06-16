@@ -6,6 +6,7 @@ GIS
 <br>
 ●ビルド<br>
 ビルドして実行するためにはMicrosoft Visual Studio 2008が必要です。<br>
+このページにある「Zip」ボタンをクリックするとすべてのプログラムをダウンロードすることができます。<br>
 <br>
 ●ディレクトリ構成<br>
 GIS/GIS.sln            Visual Studioのソリューションファイルです。<br>
