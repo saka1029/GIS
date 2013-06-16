@@ -1,0 +1,396 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Dictionaries
+</name>
+</assembly>
+<members>
+<member name="P:Dictionaries.WordDictionaryBase`1.WordAccessor">
+	<summary>
+ この辞書が使用するWordAccessorを取得または設定します。
+ </summary>
+</member><member name="M:Dictionaries.WordDictionaryBase`1.#ctor(Dictionaries.WordAccessor{`0})">
+	<summary>
+ コンストラクタです。
+ </summary>
+	<param name="wordAccessor">用語にアクセスするためのオブジェクトを指定します。</param>
+</member><member name="P:Dictionaries.WordDictionaryBase`1.Type(`0)">
+	<summary>
+ 用語の種類を取得するためのヘルパー関数です。
+ </summary>
+</member><member name="P:Dictionaries.WordDictionaryBase`1.Name(`0)">
+	<summary>
+ 用語の文字列を取得するためのヘルパー関数です。
+ </summary>
+</member><member name="M:Dictionaries.WordDictionaryBase`1.InType(`0,System.String[])">
+	<summary>
+ 用語の種類が一致するかどうかを調べます。
+ </summary>
+	<param name="word">調べる用語を指定します。</param>
+	<param name="types">比較する種類を指定します。</param>
+	<returns>typesの中に指定した用語の種類と一致するものがあればTrueを、
+ それ以外の場合はFalseを返します。
+ 用語の種類をひとつも指定しなかった場合はTrueを返します。</returns>
+</member><member name="T:Dictionaries.WordDictionaryBase`1">
+	<summary>
+ 用語辞書WordDictionaryの実装を容易にするためのベースクラスです。
+ </summary>
+	<typeparam name="T">用語を格納するオブジェクトの型を指定します。</typeparam>
+</member><member name="T:Dictionaries.TrieDictionary`1.Node`1">
+	<summary>
+ トライ木のノードです。
+ </summary>
+	<typeparam name="W">格納する用語の型を指定します。</typeparam>
+</member><member name="F:Dictionaries.TrieDictionary`1.Root">
+	<summary>
+ ルートノードです。
+ </summary>
+</member><member name="M:Dictionaries.TrieDictionary`1.#ctor(Dictionaries.WordAccessor{`0})">
+	<summary>
+ 空の辞書を作成するコンストラクタです。
+ </summary>
+	<param name="WordAccessor">用語へのアクセサを指定します。</param>
+</member><member name="M:Dictionaries.TrieDictionary`1.Find(Dictionaries.TrieDictionary{`0}.Node{`0},System.Char)">
+	<summary>
+ 指定されたノードの子ノードの中から指定した文字のノードを検索します。
+ 検索は二分探索によって行います。
+ このため子ノードは文字の上昇順に並んでいる必要があります。
+ </summary>
+	<param name="node">検索する親ノードを指定します。</param>
+	<param name="ch">検索する文字を指定します。</param>
+	<returns>見つかった子ノードを返します。
+ 該当する子ノードが見つからなかった場合はNothingを返します。</returns>
+</member><member name="M:Dictionaries.TrieDictionary`1.Add(Dictionaries.TrieDictionary{`0}.Node{`0},Dictionaries.TrieDictionary{`0}.Node{`0})">
+	<summary>
+ 指定されたノードに子ノードを追加します。
+ 子ノードが文字の上昇順に並ぶように追加します。
+ </summary>
+	<param name="node">追加先の親ノードを指定します。</param>
+	<param name="child">追加する子ノードを指定します。</param>
+</member><member name="M:Dictionaries.TrieDictionary`1.Add(Dictionaries.TrieDictionary{`0}.Node{`0},`0)">
+	<summary>
+ ノードに用語を追加します。
+ </summary>
+	<param name="node">追加先のノードを指定します。</param>
+	<param name="word">追加する用語を指定します。</param>
+</member><member name="M:Dictionaries.TrieDictionary`1.Add(`0)">
+	<summary>
+ 用語を辞書に追加します。
+ </summary>
+	<param name="word">追加する用語を指定します。</param>
+</member><member name="M:Dictionaries.TrieDictionary`1.Encode(System.String,System.String[])">
+	<summary>
+ 文字列中に出現するすべての用語を検索します。
+ </summary>
+	<param name="s">検索対象文字列を指定します。</param>
+	<param name="types">検索する用語の種類を指定します。</param>
+	<returns>検索した結果の用語と出現位置および長さをリストで返します。
+ １件も見つからなかった場合は空のリストを返します。</returns>
+	<remarks></remarks>
+</member><member name="M:Dictionaries.TrieDictionary`1.Find(System.String,System.Int32,System.String[])">
+	<summary>
+ 指定した文字列と同じ用語を検索します。
+ </summary>
+	<param name="s">検索文字列を指定します。</param>
+	<param name="max">検索結果の最大件数を指定します。
+ ゼロ以下の値を指定した場合は全件検索します。</param>
+	<param name="types">検索する用語の種類を指定します。</param>
+	<returns>検索した結果の用語をリストで返します。
+ １件も見つからなかった場合は空のリストを返します。</returns>
+</member><member name="M:Dictionaries.TrieDictionary`1.AllDescendant(Dictionaries.TrieDictionary{`0}.Node{`0},System.Collections.Generic.List{`0},System.Int32,System.String[])">
+	<summary>
+ 指定したノードおよびそのすべての子孫ノードに格納された用語をリストに格納します。
+ </summary>
+	<param name="node">起点となるノードを指定します。</param>
+	<param name="list">結果を格納するリストを指定します。</param>
+	<param name="max">格納する最大件数を指定します。</param>
+	<param name="types">対象となる用語の種類を指定します。</param>
+</member><member name="M:Dictionaries.TrieDictionary`1.FindStartsWith(System.String,System.Int32,System.String[])">
+	<summary>
+ 指定した文字列で始まる用語を検索します。
+ </summary>
+	<param name="s">検索文字列を指定します。</param>
+	<param name="max">検索結果の最大件数を指定します。
+ ゼロ以下の値を指定した場合は全件検索します。</param>
+	<param name="types">検索する用語の種類を指定します。</param>
+	<returns>検索した結果の用語をリストで返します。
+ １件も見つからなかった場合は空のリストを返します。</returns>
+</member><member name="M:Dictionaries.TrieDictionary`1.ToList">
+	<summary>
+ 辞書に格納されているすべての用語をリストとして返します。
+ </summary>
+</member><member name="T:Dictionaries.TrieDictionary`1">
+	<summary>
+ トライ木によるWordDictionaryの実装です。
+ （トライ木の詳細については「http://ja.wikipedia.org/wiki/トライ木」
+ を参照してください）
+ サブツリーの検索は二分探索で行います。
+ </summary>
+</member><member name="P:Dictionaries.CsvReader.Count">
+	<summary>
+ 保持している１行分データの項目数を参照または設定します。
+ 現在の値よりも小さな値を設定すると余分なデータ項目が削除されます。
+ 現在の値よりも大きな値を設定するとデータ項目として空文字列("")が
+ 必要なだけ追加されます。
+ </summary>
+	<value>新しい項目数を指定します。</value>
+	<returns>現在の項目数を返します。</returns>
+</member><member name="P:Dictionaries.CsvReader.Item(System.Int32)">
+	<summary>
+ 読み込んだデータを参照または変更するデフォルトのプロパティです。
+ </summary>
+	<param name="index">行内の項目番号を指定します。先頭はゼロです。</param>
+	<value>変更する値を指定します。</value>
+	<returns>取得した値を返します。</returns>
+</member><member name="M:Dictionaries.CsvReader.#ctor(System.String,System.Text.Encoding)">
+	<summary>
+ ファイル名およびエンコーディングを指定してオブジェクトを作成します。
+ </summary>
+	<param name="filename">読み込むCSVファイルを指定します。</param>
+</member><member name="M:Dictionaries.CsvReader.#ctor(System.IO.TextReader)">
+	<summary>
+ TextReaderを指定してオブジェクトを作成します。
+ </summary>
+	<param name="reader">読み込むTextReaderを指定します。</param>
+</member><member name="M:Dictionaries.CsvReader.Close">
+	<summary>
+ ファイルを閉じます。
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Dictionaries.CsvReader.Read">
+	<summary>
+ １行分のデータを読み込みます。
+ 読み込んだ内容はこのオブジェクトの中に保持します。
+ これらを取り出すためにはデフォルトプロパティ
+ 「Item(index As Integer)」を使用します。
+ </summary>
+	<returns>行を読み込んだときはTrueを、
+ ファイルの終わりに達したときはFalseを返します。
+ </returns>
+</member><member name="M:Dictionaries.CsvReader.WriteTo(System.IO.TextWriter)">
+	<summary>
+ 現在の行の内容をTextWriterに出力します。
+ 項目の区切り文字はカンマです。
+ 各項目は二重引用符で囲んで出力します。
+ 項目の値として二重引用符自身を含む場合はふたつ連続して出力します。
+ </summary>
+	<param name="writer">出力先を指定します。</param>
+</member><member name="T:Dictionaries.CsvReader">
+	<summary>
+ CSV形式のファイルを読み込みます。
+ 以下のRFCで定義された形式のファイルを読み込むことができます。
+ RFC4180「Common Format and MIME Type for Comma-Separated Values (CSV) 」
+ 「Files (CSVファイルの一般的書式、およびMIMEタイプ) 」
+ 以下に使用例を示します。
+ Dim reader As New CsvReader("test.csv")
+ Try
+     While reader.Read
+         Console.WriteLine("field1={0}, field2={1}", reader(0), reader(1))
+     End While
+ Finally
+     reader.Close()
+ End Try
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Dictionaries.WordAccessor`1.Type(`0)">
+	<summary>
+ 用語の名称を取得します。
+ </summary>
+	<param name="word">用語を格納するオブジェクトを指定します。</param>
+	<returns>用語の文字列表現を返します。</returns>
+</member><member name="P:Dictionaries.WordAccessor`1.Name(`0)">
+	<summary>
+ 用語の種類を取得します。
+ </summary>
+	<param name="word">用語を格納するオブジェクトを指定します。</param>
+	<returns>用語の種類を返します。</returns>
+</member><member name="T:Dictionaries.WordAccessor`1">
+	<summary>
+ WordDictionaryから用語(T)にアクセスするためのインタフェースです。
+ WordDictionaryが保持する用語(T)は任意のクラスで表現できますが、
+ このインタフェースを使用して内部のデータにアクセスします。
+ 用語(T)自身がインタフェースを実装するように強制してもよいわけですが、
+ Tの実体の型として型付きデータセットのDataRowのように、後からインタフェースを
+ 実装しにくい場合もあることから、このように外部のアクセサを通して
+ アクセスできるような設計にしています。
+ </summary>
+	<typeparam name="T">用語を格納するオブジェクトの型を指定します。</typeparam>
+</member><member name="T:Dictionaries.NormalizedDictionary`1.Rep">
+	<summary>
+ 置換パターンを保持するための内部クラスです。
+ </summary>
+</member><member name="T:Dictionaries.NormalizedDictionary`1.NormWordAccessor`1">
+	<summary>
+ 正規化を行うWordAccessorのラッパーです。
+ </summary>
+	<typeparam name="W">用語を格納するクラスを指定します。</typeparam>
+</member><member name="M:Dictionaries.NormalizedDictionary`1.CheckCyclic(Dictionaries.NormalizedDictionary{`0}.Rep,System.Collections.Generic.List{System.String})">
+	<summary>
+ 置換パターンの中に循環参照がないことを確認します。
+ 循環参照がある場合はInvalidOperationExceptionをスローします。
+ </summary>
+	<param name="r">置換パターンを指定します。</param>
+	<param name="history">置換の履歴を指定します。</param>
+</member><member name="M:Dictionaries.NormalizedDictionary`1.Initialize(Dictionaries.NormalizedDictionary{`0}.Rep,System.Text.StringBuilder,System.Collections.Generic.List{System.String})">
+	<summary>
+ 置換辞書の多重置換関係を解決します。
+ 例えば置換パターン
+ Ａ→ＢおよびＢ→Ｃがあった場合、前者の置換パターンをＡ→Ｃに変更します。
+ また置換パターンの循環参照をチェックします。
+ 循環参照がある場合はInvalidOperationExceptionをスローします。
+ </summary>
+	<param name="rep"></param>
+	<param name="dst"></param>
+	<param name="history"></param>
+</member><member name="M:Dictionaries.NormalizedDictionary`1.AddReplacement(System.String,System.String)">
+	<summary>
+ 置換パターンを登録します。
+ </summary>
+	<param name="src">置換前の文字列を指定します。１文字以上でなければなりません。</param>
+	<param name="dst">置換後の文字列を指定します。空文字列でもかまいません。</param>
+	<remarks></remarks>
+</member><member name="M:Dictionaries.NormalizedDictionary`1.AddReplacement(Dictionaries.CsvReader)">
+	<summary>
+ 置換パターンをCSVReaderから読み込みます。
+ </summary>
+	<param name="reader"></param>
+	<remarks></remarks>
+</member><member name="M:Dictionaries.NormalizedDictionary`1.SetPos(System.Collections.Generic.List{System.Int32},System.Int32,System.Int32,System.Int32)">
+	<summary>
+ 置換前後の文字位置の対応表を更新します。
+ </summary>
+	<param name="positions">対応表を指定します。
+ この引数がNothingの場合は何もしません。
+ </param>
+</member><member name="M:Dictionaries.NormalizedDictionary`1.Normalize(System.String,System.Collections.Generic.List{System.Int32})">
+	<summary>
+ 文字列を置換します。
+ 引数positionsにNothing以外の値を指定すると
+ 置換前後の文字位置の対応表を格納します。
+ 置換後文字列における文字位置iに対応する正規化前文字列の位置がjの場合、
+ positions(i) == j
+ となります。
+ </summary>
+	<param name="s">
+ 正規化する文字列を指定します。
+ </param>
+	<param name="positions">
+ 正規化前後の位置対応表を格納する空のリストを指定します。
+ 位置対応表が必要ない場合はNothingを指定します。
+ positionsは必要に応じてサイズが拡張されます。
+ 呼出後positionsの長さは「 正規化後文字列.Length() + 1」となります。</param>
+	<returns>
+ 正規化された文字列を返します。
+ </returns>
+</member><member name="M:Dictionaries.NormalizedDictionary`1.Add(`0)">
+	<summary>
+ 辞書に用語を追加します。
+ 置換辞書の初期化を行い、元となる辞書に処理を委譲します。
+ </summary>
+</member><member name="M:Dictionaries.NormalizedDictionary`1.Encode(System.String,System.String[])">
+	<summary>
+ 文字列をコード化します。
+ 置換辞書により文字列を置換後にコード化を行います。
+ コード化結果の文字位置は文字列置換前の位置を返します。
+ </summary>
+</member><member name="M:Dictionaries.NormalizedDictionary`1.Find(System.String,System.Int32,System.String[])">
+	<summary>
+ Findの実装です。
+ 元になる辞書に処理を委譲します。
+ </summary>
+</member><member name="M:Dictionaries.NormalizedDictionary`1.FindStartsWith(System.String,System.Int32,System.String[])">
+	<summary>
+ FindStartsWithの実装です。
+ 元になる辞書に処理を委譲します。
+ </summary>
+</member><member name="M:Dictionaries.NormalizedDictionary`1.ToList">
+	<summary>
+ ToListの実装です。
+ 元になる辞書に処理を委譲します。
+ </summary>
+</member><member name="M:Dictionaries.NormalizedDictionary`1.ReplacementToList">
+	<summary>
+ 置換辞書をリストに出力します。
+ </summary>
+</member><member name="T:Dictionaries.NormalizedDictionary`1">
+	<summary>
+ 用語および検索対象文字列に対して正規化を行うWordDictionaryの実装です。
+ このクラスは辞書のエンジン自身は持っておらず、正規化のみを行います。
+ 辞書のエンジンはコンストラクタの引数で与える必要があります。
+ </summary>
+	<typeparam name="T">用語の型を指定します。</typeparam>
+</member><member name="P:Dictionaries.WordFound`1.Word">
+	<summary>
+ 見つかった用語を取得します。
+ </summary>
+</member><member name="P:Dictionaries.WordFound`1.Position">
+	<summary>
+ 見つかった用語の位置を取得します。
+ </summary>
+</member><member name="P:Dictionaries.WordFound`1.Length">
+	<summary>
+ 見つかった用語の長さを取得します。
+ </summary>
+</member><member name="T:Dictionaries.WordFound`1">
+	<summary>
+ WordDictionaryで検索した結果の用語を格納するためのクラスです。
+ </summary>
+	<typeparam name="T">用語を格納するオブジェクトの型を指定します。</typeparam>
+</member><member name="P:Dictionaries.WordDictionary`1.WordAccessor">
+	<summary>
+ この辞書が使用するWordAccessorを取得または設定します。
+ </summary>
+</member><member name="M:Dictionaries.WordDictionary`1.Add(`0)">
+	<summary>
+ 用語を辞書に追加します。
+ </summary>
+	<param name="word">追加する用語を指定します。</param>
+</member><member name="M:Dictionaries.WordDictionary`1.Encode(System.String,System.String[])">
+	<summary>
+ 指定した文字列に含まれる用語を検索します。
+ </summary>
+	<param name="s">検索対象文字列を指定します。</param>
+	<param name="types">検索対象となる用語の種類を指定します。
+ 何も指定しない場合はすべての種類が検索対象となります。</param>
+	<returns>見つかった用語と位置および長さをリストで返します。</returns>
+</member><member name="M:Dictionaries.WordDictionary`1.Find(System.String,System.Int32,System.String[])">
+	<summary>
+ 指定した文字列に一致する用語を検索します。
+ </summary>
+	<param name="s">検索文字列を指定します。</param>
+	<param name="max">結果として返す最大件数を指定します。
+ ゼロ以下の値を指定した場合はすべての結果を返します。
+ </param>
+	<param name="types">検索対象とする用語の種類を指定します。
+ 何も指定しない場合はすべての種類が検索対象となります。</param>
+	<returns>見つかった用語のリストを返します。
+ １件も見つからない場合は空のリストを返します。</returns>
+</member><member name="M:Dictionaries.WordDictionary`1.FindStartsWith(System.String,System.Int32,System.String[])">
+	<summary>
+ 指定した文字列で始まる用語を検索します。
+ </summary>
+	<param name="s">検索文字列を指定します。</param>
+	<param name="max">結果として返す最大件数を指定します。
+ ゼロ以下の値を指定した場合はすべての結果を返します。
+ </param>
+	<param name="types">検索対象とする用語の種類を指定します。
+ 何も指定しない場合はすべての種類が検索対象となります。</param>
+	<returns>見つかった用語のリストを返します。
+ １件も見つからない場合は空のリストを返します。</returns>
+</member><member name="M:Dictionaries.WordDictionary`1.ToList">
+	<summary>
+ 辞書に格納されているすべての用語をリストとして返します。
+ </summary>
+	<returns>すべての用語のリストを返します。
+ １件も見つからな場合は空のリストを返します。</returns>
+</member><member name="T:Dictionaries.WordDictionary`1">
+	<summary>
+ 用語の辞書です。
+ 文字列の中から辞書に登録された用語を検索することができます。
+ </summary>
+	<typeparam name="T">用語を格納するオブジェクトの型を指定します。</typeparam>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

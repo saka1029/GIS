@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+GIS
+</name>
+</assembly>
+<members>
+<member name="T:GIS.街区">
+	<summary>
+ 位置参照情報を格納するクラスです。
+ 詳細は以下を参照してください。
+ 
+ http://nlftp.mlit.go.jp/isj/index.html
+ </summary>
+</member>
+</members>
+</doc>

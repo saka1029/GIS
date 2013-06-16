@@ -1,0 +1,7 @@
+C:\git\saka1029\net\GIS\Dictionaries\obj\Debug\ResolveAssemblyReference.cache
+C:\git\saka1029\net\GIS\Dictionaries\bin\Dictionaries.dll
+C:\git\saka1029\net\GIS\Dictionaries\bin\Dictionaries.pdb
+C:\git\saka1029\net\GIS\Dictionaries\bin\Dictionaries.xml
+C:\git\saka1029\net\GIS\Dictionaries\obj\Debug\Dictionaries.dll
+C:\git\saka1029\net\GIS\Dictionaries\obj\Debug\Dictionaries.xml
+C:\git\saka1029\net\GIS\Dictionaries\obj\Debug\Dictionaries.pdb

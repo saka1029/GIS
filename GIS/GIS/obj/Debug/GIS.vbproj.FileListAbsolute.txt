@@ -1,0 +1,12 @@
+C:\git\saka1029\net\GIS\GIS\obj\Debug\ResolveAssemblyReference.cache
+C:\git\saka1029\net\GIS\GIS\obj\Debug\GIS.Resources.resources
+C:\git\saka1029\net\GIS\GIS\obj\Debug\GIS.vbproj.GenerateResource.Cache
+C:\git\saka1029\net\GIS\GIS\bin\GIS.dll
+C:\git\saka1029\net\GIS\GIS\bin\GIS.pdb
+C:\git\saka1029\net\GIS\GIS\bin\GIS.xml
+C:\git\saka1029\net\GIS\GIS\bin\Dictionaries.dll
+C:\git\saka1029\net\GIS\GIS\bin\Dictionaries.pdb
+C:\git\saka1029\net\GIS\GIS\bin\Dictionaries.xml
+C:\git\saka1029\net\GIS\GIS\obj\Debug\GIS.dll
+C:\git\saka1029\net\GIS\GIS\obj\Debug\GIS.xml
+C:\git\saka1029\net\GIS\GIS\obj\Debug\GIS.pdb

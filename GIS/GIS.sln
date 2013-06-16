@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GISForms", "GISForms\GISForms.vbproj", "{3929A447-DD66-4B74-A8D2-5B34FE7A2729}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GIS", "GIS\GIS.vbproj", "{345345C0-D4CA-4136-85CF-F6F7CE3C9DA9}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Dictionaries", "Dictionaries\Dictionaries.vbproj", "{D1D982DC-B76E-42E5-B0D5-042F2BE9CC1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3929A447-DD66-4B74-A8D2-5B34FE7A2729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3929A447-DD66-4B74-A8D2-5B34FE7A2729}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3929A447-DD66-4B74-A8D2-5B34FE7A2729}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3929A447-DD66-4B74-A8D2-5B34FE7A2729}.Release|Any CPU.Build.0 = Release|Any CPU
+		{345345C0-D4CA-4136-85CF-F6F7CE3C9DA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{345345C0-D4CA-4136-85CF-F6F7CE3C9DA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{345345C0-D4CA-4136-85CF-F6F7CE3C9DA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{345345C0-D4CA-4136-85CF-F6F7CE3C9DA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1D982DC-B76E-42E5-B0D5-042F2BE9CC1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1D982DC-B76E-42E5-B0D5-042F2BE9CC1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1D982DC-B76E-42E5-B0D5-042F2BE9CC1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1D982DC-B76E-42E5-B0D5-042F2BE9CC1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
