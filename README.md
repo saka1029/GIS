@@ -2,6 +2,7 @@ GIS
 ===
 
 国土交通省が公開する位置参照情報を使用してふたつの住所の間の距離を求めます。<br>
+このプログラムは『街区レベル位置参照情報　国土交通省』を使用して作成しています。<br>
 <br>
 ●ビルド<br>
 ビルドして実行するためにはMicrosoft Visual Studio 2008が必要です。<br>
@@ -35,8 +36,10 @@ GIS/GISForms/app.configにダウンロードしたファイル名を追加しま
 Wikipediaによれば<br>
 「都市計画区域は、国土の25.7%を占めているに過ぎないが、91.6%の人が住んでいる。」<br>
 とのことです。<br>
+<br>
 ●参考URL<br>
 国土交通省位置参照情報ダウンロードサービス： http://nlftp.mlit.go.jp/isj/index.html<br>
 二地点の緯度・経度からその距離を計算する： http://yamadarake.jp/trdi/report000001.html<br>
 Google Maps APIを使用して距離を計算するサイト： http://www.benricho.org/map_straightdistance/<br>
 平面直角座標系（平成十四年国土交通省告示第九号）： http://www.gsi.go.jp/LAW/heimencho.html<br>
+Wikipedia都市計画区域： http://ja.wikipedia.org/wiki/%E9%83%BD%E5%B8%82%E8%A8%88%E7%94%BB%E5%8C%BA%E5%9F%9F
